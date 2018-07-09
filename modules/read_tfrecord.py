@@ -34,7 +34,7 @@ def write_array_to_tfrecord(array, labels, filename, options=None):
     writer.close()
     sys.stdout.flush()
     
-def read_tfrecord_to_array(filename, options=None):
+def read_tfrecord_to_array(filename, options=None): # based on this tutorial: http://machinelearninguru.com/deep_learning/data_preparation/tfrecord/tfrecord.html
     feature = {'image': tf.FixedLenFeature([], tf.string)}
     for name in LABEL_NAMES:
         feature[name] = tf.FixedLenFeature([], tf.float32)
